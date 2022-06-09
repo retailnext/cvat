@@ -137,6 +137,12 @@ task_create_parser.add_argument(
     help='format of the annotation file being uploaded, e.g. CVAT 1.1'
 )
 task_create_parser.add_argument(
+    '--assignee_id',
+    default='',
+    type=str,
+    help='assignee id'
+)
+task_create_parser.add_argument(
     '--bug_tracker', '--bug',
     default=None,
     type=str,

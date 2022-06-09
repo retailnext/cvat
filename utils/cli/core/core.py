@@ -86,7 +86,7 @@ class CLI():
                 'labels': labels
         }
 
-        for flag in ['bug_tracker', 'overlap', 'project_id', 'segment_size']:
+        for flag in ['bug_tracker', 'overlap', 'project_id', 'segment_size', 'assignee_id']:
             if kwargs.get(flag) is not None:
                 data[flag] = kwargs.get(flag)
 
