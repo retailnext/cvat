@@ -227,7 +227,8 @@ class LambdaFunction:
 
             if self.kind == LambdaType.DETECTOR:
                 payload.update({
-                    "image": self._get_image(db_task, data["frame"], quality)
+                    "image": self._get_image(db_task, data["frame"], quality),
+                    "image_path": db_task.data.images.get(frame=data["frame"]).path
                 })
             elif self.kind == LambdaType.INTERACTOR:
                 payload.update({
