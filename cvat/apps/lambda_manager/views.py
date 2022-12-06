@@ -23,7 +23,7 @@ import cvat.apps.dataset_manager as dm
 from cvat.apps.engine.frame_provider import FrameProvider
 from cvat.apps.engine.models import Task as TaskModel
 from cvat.apps.engine.serializers import LabeledDataSerializer
-from cvat.apps.engine.models import ShapeType, SourceType
+from cvat.apps.engine.models import ShapeType, SourceType, DataChoice
 
 from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiResponse, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
@@ -226,9 +226,15 @@ class LambdaFunction:
                             supported_attrs[func_label].update({ attr["name"]: task_attributes[mapped_label][mapped_attr] })
 
             if self.kind == LambdaType.DETECTOR:
+                if db_task.data.original_chunk_type == DataChoice.VIDEO:
+                    data_path = db_task.data.video.path
+                elif db_task.data.original_chunk_type == DataChoice.IMAGESET:
+                    data_path = db_task.data.images.get(frame=data["frame"]).path
+                else:
+                    data_path = ""
                 payload.update({
                     "image": self._get_image(db_task, data["frame"], quality),
-                    "image_path": db_task.data.images.get(frame=data["frame"]).path
+                    "data_path": data_path
                 })
             elif self.kind == LambdaType.INTERACTOR:
                 payload.update({
