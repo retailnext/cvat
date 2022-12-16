@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## \[2.4.0] - Unreleased
+## \[2.3.0] - 2022-12-22
 ### Added
 - \[SDK\] An arg to wait for data processing in the task data uploading function
   (<https://github.com/opencv/cvat/pull/5502>)
@@ -98,8 +98,8 @@ Tracks can be exported/imported to/from Datumaro and Sly Pointcloud formats (<ht
 - Objects sorting option in the sidebar, by z-order. Additional visualization when sorting is applied
 (<https://github.com/opencv/cvat/pull/5145>)
 - Added YOLOv5 serverless function with NVIDIA GPU support (<https://github.com/opencv/cvat/pull/4960>)
-- Mask tools now supported (brush, eraser, polygon-plus, 
-polygon-minus, returning masks from online detectors & interactors) 
+- Mask tools now supported (brush, eraser, polygon-plus,
+polygon-minus, returning masks from online detectors & interactors)
 (<https://github.com/opencv/cvat/pull/4543>)
 - Added Webhooks (<https://github.com/opencv/cvat/pull/4863>)
 - Authentication with social accounts: Google & GitHub (<https://github.com/opencv/cvat/pull/5147>, <https://github.com/opencv/cvat/pull/5181>, <https://github.com/opencv/cvat/pull/5295>)
@@ -195,6 +195,8 @@ non-ascii paths while adding files from "Connected file share" (issue #4428)
 - `Project.import_dataset` not waiting for completion correctly
   (<https://github.com/opencv/cvat/pull/5459>)
 
+### Security
+- TDB
 
 ## \[2.2.0] - 2022-09-12
 ### Added

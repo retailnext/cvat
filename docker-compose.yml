@@ -25,7 +25,7 @@ services:
 
   cvat_server:
     container_name: cvat_server
-    image: cvat/server:${CVAT_VERSION:-dev}
+    image: cvat/server:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_redis
@@ -63,7 +63,7 @@ services:
 
   cvat_utils:
     container_name: cvat_utils
-    image: cvat/server:${CVAT_VERSION:-dev}
+    image: cvat/server:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_redis
@@ -82,9 +82,9 @@ services:
     networks:
       - cvat
 
-  cvat_worker_import:
-    container_name: cvat_worker_import
-    image: cvat/server:${CVAT_VERSION:-dev}
+  cvat_worker_default:
+    container_name: cvat_worker_default
+    image: cvat/server:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_redis
@@ -104,30 +104,9 @@ services:
     networks:
       - cvat
 
-  cvat_worker_export:
-    container_name: cvat_worker_export
-    image: cvat/server:${CVAT_VERSION:-dev}
-    restart: always
-    depends_on:
-      - cvat_redis
-      - cvat_db
-    environment:
-      CVAT_REDIS_HOST: 'cvat_redis'
-      CVAT_POSTGRES_HOST: 'cvat_db'
-      CLICKHOUSE_HOST: clickhouse
-      no_proxy: clickhouse,grafana,vector,nuclio,opa,${no_proxy:-}
-      NUMPROCS: 2
-    command: -c supervisord/worker.export.conf
-    volumes:
-      - cvat_data:/home/django/data
-      - cvat_keys:/home/django/keys
-      - cvat_logs:/home/django/logs
-    networks:
-      - cvat
-
-  cvat_worker_annotation:
-    container_name: cvat_worker_annotation
-    image: cvat/server:${CVAT_VERSION:-dev}
+  cvat_worker_low:
+    container_name: cvat_worker_low
+    image: cvat/server:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_redis
@@ -148,7 +127,7 @@ services:
 
   cvat_worker_webhooks:
     container_name: cvat_worker_webhooks
-    image: cvat/server:${CVAT_VERSION:-dev}
+    image: cvat/server:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_redis
@@ -169,7 +148,7 @@ services:
 
   cvat_ui:
     container_name: cvat_ui
-    image: cvat/ui:${CVAT_VERSION:-dev}
+    image: cvat/ui:${CVAT_VERSION:-v2.3.0}
     restart: always
     depends_on:
       - cvat_server
