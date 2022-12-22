@@ -41,23 +41,17 @@ from .signals import signal_ping, signal_redelivery
     update=extend_schema(
         summary="Method updates a webhook by id",
         request=WebhookWriteSerializer,
-        responses={
-            "200": WebhookReadSerializer
-        },  # check WebhookWriteSerializer.to_representation
+        responses={"200": WebhookReadSerializer}, # check WebhookWriteSerializer.to_representation
     ),
     partial_update=extend_schema(
         summary="Methods does a partial update of chosen fields in a webhook",
         request=WebhookWriteSerializer,
-        responses={
-            "200": WebhookReadSerializer
-        },  # check WebhookWriteSerializer.to_representation
+        responses={"200": WebhookReadSerializer}, # check WebhookWriteSerializer.to_representation
     ),
     create=extend_schema(
         request=WebhookWriteSerializer,
         summary="Method creates a webhook",
-        responses={
-            "201": WebhookReadSerializer
-        },  # check WebhookWriteSerializer.to_representation
+        responses={"201": WebhookReadSerializer} # check WebhookWriteSerializer.to_representation
     ),
     destroy=extend_schema(
         summary="Method deletes a webhook",
@@ -78,12 +72,10 @@ class WebhookViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         # Early exit for drf-spectacular compatibility
-        if getattr(self, "swagger_fake_view", False):
+        if getattr(self, 'swagger_fake_view', False):
             return WebhookReadSerializer
 
-        if self.request.path.endswith("redelivery") or self.request.path.endswith(
-            "ping"
-        ):
+        if self.request.path.endswith("redelivery") or self.request.path.endswith("ping"):
             return None
         else:
             if self.request.method in SAFE_METHODS:
@@ -171,16 +163,15 @@ class WebhookViewSet(viewsets.ModelViewSet):
         )
         return Response(serializer.data)
 
-    @extend_schema(
-        summary="Method redeliver a specific webhook delivery",
+    @extend_schema(summary="Method redeliver a specific webhook delivery",
         request=None,
-        responses={200: None},
+        responses={200: None}
     )
     @action(
         detail=True,
         methods=["POST"],
         url_path=r"deliveries/(?P<delivery_id>\d+)/redelivery",
-        serializer_class=None,
+        serializer_class=None
     )
     def redelivery(self, request, pk, delivery_id):
         delivery = WebhookDelivery.objects.get(webhook_id=pk, id=delivery_id)

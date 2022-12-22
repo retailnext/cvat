@@ -236,8 +236,8 @@ class ProjectViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,
     iam_organization_field = 'organization'
 
     def get_serializer_class(self):
-        if self.request.method in SAFE_METHODS:
-            return ProjectReadSerializer
+        if self.request.path.endswith('tasks'):
+            return TaskReadSerializer
         else:
             return ProjectWriteSerializer
 
