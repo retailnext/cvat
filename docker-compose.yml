@@ -25,7 +25,11 @@ services:
 
   cvat_server:
     container_name: cvat_server
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -63,7 +67,11 @@ services:
 
   cvat_utils:
     container_name: cvat_utils
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -87,7 +95,11 @@ services:
 
   cvat_worker_import:
     container_name: cvat_worker_import
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -109,7 +121,11 @@ services:
 
   cvat_worker_export:
     container_name: cvat_worker_export
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -132,7 +148,11 @@ services:
 
   cvat_worker_annotation:
     container_name: cvat_worker_annotation
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -155,7 +175,11 @@ services:
 
   cvat_worker_webhooks:
     container_name: cvat_worker_webhooks
+<<<<<<< HEAD
     image: cvat/server:${CVAT_VERSION:-dev}
+=======
+    image: cvat/server:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_redis
@@ -178,7 +202,11 @@ services:
 
   cvat_ui:
     container_name: cvat_ui
+<<<<<<< HEAD
     image: cvat/ui:${CVAT_VERSION:-dev}
+=======
+    image: cvat/ui:${CVAT_VERSION:-v2.4.1}
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
     restart: always
     depends_on:
       - cvat_server

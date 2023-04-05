@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## \[2.3.0] - 2022-12-22
 =======
 =======
@@ -54,6 +55,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TDB
 
 >>>>>>> 7d8b55299 (Update version to v2.5.0.alpha (#5868))
+=======
+## \[2.4.1] - 2023-04-05
+### Fixed
+- Optimized annotation fetching up to 10 times (<https://github.com/opencv/cvat/pull/5974>)
+
+>>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
 ## \[2.4.0] - 2023-03-16
 >>>>>>> 86c9da3c4 (update version)
 ### Added
