@@ -53,7 +53,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Incorrect calculation of working time in analytics (<https://github.com/opencv/cvat/pull/5973>)
 =======
 - Server micro version support check in SDK/CLI (<https://github.com/opencv/cvat/pull/5991>)
+<<<<<<< HEAD
 >>>>>>> 0c853b15b (Fix version checks in SDK (#5991))
+=======
+- \[SDK\] Compatibility with upcoming urllib 2.1.0
+  (<https://github.com/opencv/cvat/pull/6002>)
+>>>>>>> 2505b314f (SDK: fix urllib3 deprecation warnings (#6002))
 
 ### Security
 - TDB
