@@ -5,12 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-## \[2.3.0] - 2022-12-22
-=======
-=======
 ## \[2.5.0] - Unreleased
 ### Added
 - Support for Azure Blob Storage connection string authentication(<https://github.com/openvinotoolkit/cvat/pull/4649>)
@@ -51,38 +45,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Escaping in the `filter` parameter in generated URLs
   (<https://github.com/opencv/cvat/issues/5566>)
 - Rotation property lost during saving a mutable attribute (<https://github.com/opencv/cvat/pull/5968>)
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Incorrect calculation of working time in analytics (<https://github.com/opencv/cvat/pull/5973>)
-=======
-=======
 - Optimized /api/jobs request (<https://github.com/opencv/cvat/pull/5962>)
->>>>>>> 14dc68e7d (Optimized jobs request (#5962))
 - Server micro version support check in SDK/CLI (<https://github.com/opencv/cvat/pull/5991>)
-<<<<<<< HEAD
->>>>>>> 0c853b15b (Fix version checks in SDK (#5991))
-=======
 - \[SDK\] Compatibility with upcoming urllib 2.1.0
   (<https://github.com/opencv/cvat/pull/6002>)
-<<<<<<< HEAD
->>>>>>> 2505b314f (SDK: fix urllib3 deprecation warnings (#6002))
-=======
 - Fix TUS file uploading if multiple apache processes are used (<https://github.com/opencv/cvat/pull/6006>)
->>>>>>> 1c753d5ed (Fix tus loading if multiple apache processes are used (#6006))
+- The issue related to webhook events not being sent has been resolved (<https://github.com/opencv/cvat/pull/5916>)
 
 ### Security
 - TDB
 
->>>>>>> 7d8b55299 (Update version to v2.5.0.alpha (#5868))
-=======
 ## \[2.4.1] - 2023-04-05
 ### Fixed
 - Optimized annotation fetching up to 10 times (<https://github.com/opencv/cvat/pull/5974>)
 - Incorrect calculation of working time in analytics (<https://github.com/opencv/cvat/pull/5973>)
 
->>>>>>> 8f2de4682 (Updated versions, clenaup the changelog.)
 ## \[2.4.0] - 2023-03-16
->>>>>>> 86c9da3c4 (update version)
 ### Added
 - \[SDK\] An arg to wait for data processing in the task data uploading function
   (<https://github.com/opencv/cvat/pull/5502>)
@@ -270,9 +248,6 @@ non-ascii paths while adding files from "Connected file share" (issue #4428)
 ### Security
 - `Project.import_dataset` not waiting for completion correctly
   (<https://github.com/opencv/cvat/pull/5459>)
-
-### Security
-- TDB
 
 ## \[2.2.0] - 2022-09-12
 ### Added
