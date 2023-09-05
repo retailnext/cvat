@@ -139,12 +139,15 @@ def _get_task_segment_data(
 
         segment_step -= overlap
 
-        segments = (
+        segments = [
             SegmentParams(start_frame, min(start_frame + segment_size - 1, data_size - 1))
             for start_frame in range(0, data_size, segment_step)
-        )
+        ]
+        # Last segment is redundant if its size less than overlap size
+        if segments[-1].stop_frame - segments[-1].start_frame <= overlap:
+            segments.pop(-1)
 
-    return SegmentsParams(segments, segment_size, overlap)
+    return SegmentsParams(iter(segments), segment_size, overlap)
 
 def _save_task_to_db(db_task: models.Task, *, job_file_mapping: Optional[JobFileMapping] = None):
     job = rq.get_current_job()
