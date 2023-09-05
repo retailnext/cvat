@@ -1,0 +1,24 @@
+services:
+  pgadmin:
+    container_name: pg_admin
+    build: ./components/pg_admin
+    restart: always
+    depends_on:
+        - cvat_db
+    networks:
+        - cvat
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "8888:80"
+    logging:
+        driver: "json-file"
+        options:
+            max-size: 100m
+            max-file: "3"
+    volumes:
+        - pgadmin-data:/var/lib/pgadmin
+volumes:
+  pgadmin-data:
+
